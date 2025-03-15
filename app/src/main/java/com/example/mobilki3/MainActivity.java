@@ -6,23 +6,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class MainActivity extends AppCompatActivity {
-
-    private EditText editText;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = findViewById(R.id.editText);
-        Button button = findViewById(R.id.button);
+        EditText editTextName = findViewById(R.id.editTextName);
+        EditText editTextSurname = findViewById(R.id.editTextSurname);
+        Button buttonNext = findViewById(R.id.buttonNext);
 
-        button.setOnClickListener(v -> {
-            String text = editText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, RelativeActivity.class);
-            intent.putExtra("text", text);
+        buttonNext.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            intent.putExtra("NAME", editTextName.getText().toString());
+            intent.putExtra("SURNAME", editTextSurname.getText().toString());
             startActivity(intent);
         });
     }

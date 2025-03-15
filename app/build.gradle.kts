@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.fragment:fragment:1.8.5")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
